@@ -1,0 +1,22 @@
+---
+- name: Install Java on Linux instances
+  hosts: linux
+  # become: yes
+  roles:
+    - install_java
+#   tasks:
+#     - name: Install Java on Linux
+#       ansible.builtin.package:
+#         name: java-1.8.0-openjdk
+#         state: present
+
+# - name: Install Java on Windows instances
+#   hosts: windows
+#   become: yes
+#   become_method: runas
+#   become_user: System
+#   tasks:
+#     - name: Install Java on Windows
+#       chocolatey.chocolatey.win_chocolatey:
+#         name: openjdk
+#         state: present

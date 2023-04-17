@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: your_name
+  description: Ansible Role to install Java on Linux and Windows instances
+  company: your_company
+  license: license (GPLv3, MIT, etc.)
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Debian
+      versions:
+        - buster
+    - name: Windows
+      versions:
+        - 2016
+  galaxy_tags:
+    - java
+    - openjdk
+    - linux
+    - windows
+dependencies: []

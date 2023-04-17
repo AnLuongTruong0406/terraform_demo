@@ -1,0 +1,6 @@
+---
+- name: Install Java on Linux instances
+  hosts: all
+  tasks:
+    - name: ping
+      ping:

@@ -1,0 +1,5 @@
+---
+- name: Install Java on Windows
+  chocolatey.chocolatey.win_chocolatey:
+    name: openjdk
+    state: present

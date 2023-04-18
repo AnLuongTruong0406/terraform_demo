@@ -1,10 +1,14 @@
 ---
 - name: Install Java on Linux instances
   hosts: linux
+  become: yes
   roles:
     - install_java
 
 - name: Install Java on Windows instances
   hosts: windows
+  become: yes
+  become_method: runas
+  become_user: System
   roles:
     - install_java

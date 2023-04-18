@@ -1,6 +1,16 @@
 ---
-- name: Install Java on Linux instances
-  hosts: all
+- name: Ping Linux instances
+  hosts: linux
+  become: yes
+  tasks:
+    - name: ping
+      ping:
+
+- name: Ping Windows instances
+  hosts: windows
+  become: yes
+  become_method: runas
+  become_user: System
   tasks:
     - name: ping
       ping:

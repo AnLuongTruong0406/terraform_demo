@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.region
+  region = "ap-southeast-1"
 }
 
 terraform {
@@ -26,7 +26,6 @@ resource "null_resource" "ansible_provision" {
   ]
 
   provisioner "local-exec" {
-    command = "OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES ansible-playbook -i ./dynamic_inventory.py ansible/install-java.yml --ssh-common-args='-o StrictHostKeyChecking=no' --become"
-    interpreter = ["bash", "-c"]
+    command = "OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES ansible-playbook -i ./dynamic_inventory.py ansible/install-java.yml --ssh-common-args='-o StrictHostKeyChecking=no' --become -e 'ansible_winrm_operation_timeout_sec=100 ansible_winrm_read_timeout_sec=110'"
   }
 }

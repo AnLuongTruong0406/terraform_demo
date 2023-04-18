@@ -15,16 +15,18 @@ def create_inventory(instances):
             "hosts": [],
             "vars": {
                 "ansible_user": "ec2-user",
-                "ansible_ssh_private_key_file": "./key/my_key_pair.pem"
+                "ansible_ssh_private_key_file": "./key/private_key.pem"
             }
         },
         "windows": {
             "hosts": [],
             "vars": {
                 "ansible_user": "Administrator",
-                "ansible_password": "<Windows_Password>",
+                "ansible_password": "4M$i&wsk9o.ja.Bmel6I3id)R%-.$M2z",
                 "ansible_connection": "winrm",
-                "ansible_winrm_transport": "basic"
+                "ansible_winrm_transport": "basic",
+                "ansible_winrm_scheme": "https",
+                "ansible_port": "5986"
             }
         },
         "_meta": {

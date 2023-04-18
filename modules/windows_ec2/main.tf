@@ -1,6 +1,6 @@
 resource "aws_key_pair" "windows_key" {
   key_name   = "windows_key"
-  public_key = file("./key/testvm.pem")
+  public_key = file("./key/ssh_rsa_public_key.pub")
 }
 
 resource "aws_instance" "windows_ec2" {

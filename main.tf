@@ -26,6 +26,10 @@ resource "null_resource" "ansible_provision" {
   ]
 
   provisioner "local-exec" {
-    command = "OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES ansible-playbook -i ./dynamic_inventory.py ansible/install-java.yml --ssh-common-args='-o StrictHostKeyChecking=no' --become -e 'ansible_winrm_operation_timeout_sec=100 ansible_winrm_read_timeout_sec=110'"
+    command = "OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES ansible-playbook -i ./dynamic_inventory.py ansible/install-java.yml --become -e 'ansible_winrm_operation_timeout_sec=100 ansible_winrm_read_timeout_sec=110'"
   }
 }
+
+# output "windows_password" {
+#   value = module.windows_ec2.windows_password
+# }

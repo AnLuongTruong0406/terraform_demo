@@ -15,8 +15,11 @@ resource "aws_instance" "windows_ec2" {
   tags = {
     Name = "Windows EC2"
   }
+
+  get_password_data = true
 }
 
-output "windows_public_ip" {
-  value = aws_instance.windows_ec2.public_ip
-}
+
+# output "windows_public_ip" {
+#   value = aws_instance.windows_ec2.public_ip
+# }

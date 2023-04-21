@@ -22,11 +22,11 @@ def create_inventory(instances):
             "hosts": [],
             "vars": {
                 "ansible_user": "Administrator",
-                "ansible_password": "4M$i&wsk9o.ja.Bmel6I3id)R%-.$M2z",
+                "ansible_password": "<mypassword>",
                 "ansible_connection": "winrm",
                 "ansible_winrm_transport": "basic",
-                "ansible_winrm_scheme": "https",
-                "ansible_port": "5986"
+                "ansible_winrm_scheme": "http",
+                "ansible_port": "5985"
             }
         },
         "_meta": {

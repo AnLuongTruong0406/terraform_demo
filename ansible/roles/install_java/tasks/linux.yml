@@ -1,5 +1,5 @@
 ---
 - name: Install Java on Linux
-  ansible.builtin.package:
+  ansible.builtin.yum:
     name: java-1.8.0-openjdk
     state: present

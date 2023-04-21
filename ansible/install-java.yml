@@ -2,13 +2,15 @@
 - name: Install Java on Linux instances
   hosts: linux
   become: yes
-  roles:
-    - install_java
+  tasks:
+    - include_tasks: roles/install_java/tasks/linux.yml
+      when: "'linux' in group_names"
 
 - name: Install Java on Windows instances
   hosts: windows
   become: yes
   become_method: runas
   become_user: System
-  roles:
-    - install_java
+  tasks:
+    - include_tasks: roles/install_java/tasks/windows.yml
+      when: "'windows' in group_names"
